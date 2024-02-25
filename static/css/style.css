@@ -1,0 +1,112 @@
+/* Basic reset for padding and margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333; /* Softer than pure black for better readability */
+    background-color: #fff;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #007aff;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Input and button styling */
+input[type="text"], button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px; /* Added margin-bottom to button for spacing */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+input[type="text"] {
+    border-color: #007aff;
+}
+
+button {
+    background-color: #007aff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005ecb;
+}
+
+/* Article container styling */
+.post-container {
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-text {
+    font-size: 18px;
+    white-space: pre-wrap;
+}
+
+/* Spinner styles */
+#loadingSpinner {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-left-color: #007aff;
+    margin: 20px auto;
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .post-container {
+        padding: 15px;
+    }
+
+    .post-text {
+        font-size: 16px;
+    }
+
+    input[type="text"], button {
+        width: auto; /* Adjust if necessary for your design */
+    }
+
+    button {
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Blog Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Generated Post on "{{ topic }}"</h1>
+    <div class="post-container" id="post-container">
+        <p class="post-text">{{ generated_post }}</p>
+    </div>
+    <a href="/">Generate another post</a>
+</body>
+</html>

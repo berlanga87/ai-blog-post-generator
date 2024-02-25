@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI Article Generator</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+    <h1>AI Article Generator - created by Carlos Berlanga</h1>
+    <form action="/" method="post">
+        <label for="topic">Enter a topic:</label>
+        <input type="text" id="topic" name="topic">
+        <button type="submit">Generate</button>
+    </form>
+    <div id="loadingSpinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.querySelector('form');
+            form.onsubmit = function() {
+                document.getElementById('loadingSpinner').style.display = 'block';
+            };
+        });
+    </script>
+    
+</body>
+</html>
