@@ -1,4 +1,3 @@
-/* Basic reset for padding and margin */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +6,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: #333; /* Softer than pure black for better readability */
+    color: #333;
     background-color: #fff;
     padding: 20px;
     line-height: 1.6;
@@ -24,7 +23,7 @@ input[type="text"], button {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    margin-bottom: 20px; /* Added margin-bottom to button for spacing */
+    margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #ddd;
 }
@@ -103,10 +102,47 @@ button:hover {
     }
 
     input[type="text"], button {
-        width: auto; /* Adjust if necessary for your design */
+        width: auto; 
     }
 
     button {
         margin-top: 10px;
+    }
+}
+
+.prompt-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.prompt-button {
+    background-color: #fff;
+    color: #007aff;
+    border: 2px solid #007aff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+}
+
+.prompt-button:hover {
+    background-color: #007aff;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .prompt-container {
+        flex-wrap: wrap;
+    }
+
+    .prompt-button {
+        flex: 1 0 auto;
+        margin: 5px 0;
     }
 }

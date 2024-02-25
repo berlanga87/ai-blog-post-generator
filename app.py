@@ -1,6 +1,20 @@
-from flask import Flask, request, render_template
+from flask import Flask, jsonify, request, render_template
 from openai import OpenAI
 import os
+import json
+import random
+
+import logging
+
+logger = logging.getLogger(__name__)
+
+
+logger.setLevel(logging.DEBUG)
+
+
+handler = logging.StreamHandler()
+handler.setLevel(logging.DEBUG)
+logger.addHandler(handler)
 
 app = Flask(__name__)
 
@@ -27,7 +41,14 @@ def home():
         return render_template('result.html', topic=topic, generated_post=generated_post)
     return render_template('index.html')
 
-
+@app.route('/get-topics')
+def get_topics():
+    with open('topics.json', 'r') as file:
+        topics_data = json.load(file)
+        topics_list = topics_data['topics']
+    # Select 5 random topics
+    selected_topics = random.sample(topics_list, 5)
+    return jsonify(selected_topics)
 
 
 if __name__ == '__main__':
