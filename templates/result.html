@@ -7,10 +7,34 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Generated Post on "{{ topic }}"</h1>
+    <h1>{{ topic }}</h1>
     <div class="post-container" id="post-container">
+        <div id="blogPostImage">Loading image...</div>
         <p class="post-text">{{ generated_post }}</p>
     </div>
     <a href="/">Generate another post</a>
 </body>
+<script>
+    const postData = {
+        prompt: "{{ topic }}"
+    };
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postData), 
+    };
+
+
+    fetch('/generate-image', requestOptions)
+        .then(response => response.json())
+        .then(data => {
+            const imageElement = document.getElementById('blogPostImage');
+            // Assuming the response includes an image_base64 field
+            imageElement.innerHTML = `<img src="data:image/png;base64,${data.image_base64}" alt="Generated Image">`;
+        })
+        .catch(error => console.error('Error fetching image:', error));
+</script>
 </html>

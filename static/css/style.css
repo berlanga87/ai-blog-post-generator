@@ -111,6 +111,9 @@ button:hover {
 }
 
 .prompt-container {
+
+
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,4 +148,22 @@ button:hover {
         flex: 1 0 auto;
         margin: 5px 0;
     }
+}
+
+.post-container {
+    background-color: #f0f0f0; 
+    padding: 20px; 
+    border-radius: 10px; 
+    margin: auto;
+    width: 80%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+}
+
+.post-container img {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto;
+    margin-bottom: 20px; 
 }
