@@ -3,7 +3,6 @@ from openai import OpenAI
 import os
 import json
 import random
-import requests
 import together
 
 import logging
@@ -21,7 +20,7 @@ logger.addHandler(handler)
 app = Flask(__name__)
 
 TOGETHER_API_KEY = os.environ.get("TOGETHER_API_KEY")
-together.api_key = os.environ.get("TOGETHER_API_KEY")
+together.api_key = TOGETHER_API_KEY
 
 client = OpenAI(api_key=TOGETHER_API_KEY,
   base_url='https://api.together.xyz',
@@ -87,6 +86,7 @@ def get_img_prompt(topic):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
 
 
